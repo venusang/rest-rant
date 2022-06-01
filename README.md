@@ -59,3 +59,11 @@ REST-Rant is an app where users can review restaurants.  It is powered by [Expre
 - When going to localhost:3000/, the stub Hello World! is rendered.
 - When going to localhost:3000/places, the stub `GET` /places is rendered.
 - When going to localhost:3000/anything, the stub 404 page is rendered.
+
+# 🎉 Acceptance Criteria (be-3-rest-rant-part-3)
+- When viewing the repository, a views folder must exist and contain all required .jsx files
+- When viewing index.jsx, all required globals, configurations, routes, and middleware are present.
+- When going to localhost:3000/, the home page view is rendered.
+- When going to localhost:3000/places, the places index page view is rendered.
+- When going to localhost:3000/anything, the 404 page view is rendered.
+- When viewing the index.jsx file located in the places folder, the data for each place must not be hard-coded.

@@ -1,10 +1,13 @@
+// CONFIGURATION
 require('dotenv').config();
 const express = require('express');
 const app = express();
 
+// MIDDLEWARE
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
+// ROUTES
 app.use('/places', require('./controllers/places'));
 
 app.get('/', (req, res) => {
