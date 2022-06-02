@@ -1,5 +1,14 @@
 const router = require('express').Router();
 
+
+router.get('/create', (req, res) => {
+  res.render('places/create');
+});
+
+router.get('/:id', (req, res) => {
+  res.render('places/detail', { id: req.params.id });
+});
+
 router.get('/', (req, res) => {
   let places = [{
     name: 'H-Thai-ML',
@@ -17,5 +26,6 @@ router.get('/', (req, res) => {
 
   res.render('places/index', { places });
 });
+
 
 module.exports = router;
