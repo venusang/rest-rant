@@ -1,7 +1,6 @@
 const { route } = require('express/lib/application');
-
 const router = require('express').Router();
-
+const places = require('../models/places.js');
 
 router.get('/create', (req, res) => {
   res.render('places/create');
@@ -12,25 +11,20 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log('req.body', req.body);
-  res.send('POST /places');
+  if (!req.body.pic) {
+    req.body.pic = 'http://placekitten.com/400/400';
+  }
+  if (!req.body.city) {
+    req.body.city = 'Anytown';
+  }
+  if (!req.body.state) {
+    req.body.state = 'USA';
+  }
+  places.push(req.body);
+  res.redirect('/places');
 });
 
 router.get('/', (req, res) => {
-  let places = [{
-    name: 'H-Thai-ML',
-    city: 'Seattle',
-    state: 'WA',
-    cuisines: 'Thai, Pan-Asian',
-    pic: '/images/thai-photo-1583475020839-105dddecc00a.jpg'
-  }, {
-    name: 'Coding Cat Cafe',
-    city: 'Phoenix',
-    state: 'AZ',
-    cuisines: 'Coffee, Bakery',
-    pic: '/images/coding-cat-cafe-istockphoto-962973582-1024x10.jpg'
-  }];
-
   res.render('places/index', { places });
 });
 
