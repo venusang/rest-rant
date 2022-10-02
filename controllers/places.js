@@ -1,9 +1,10 @@
 const { route } = require('express/lib/application');
 const router = require('express').Router();
 const places = require('../models/places.js');
+const states = require('../models/states.js');
 
 router.get('/create', (req, res) => {
-  res.render('places/create');
+  res.render('places/create', { states });
 });
 
 router.get('/:id', (req, res) => {
@@ -11,6 +12,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log('req.body', req.body);
   if (!req.body.pic) {
     req.body.pic = 'http://placekitten.com/400/400';
   }
