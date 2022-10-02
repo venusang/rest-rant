@@ -9,7 +9,19 @@ function Def(html) {
         <link rel="stylesheet" href="/css/style.css" />
       </head>
       <body>
-        <nav></nav>
+        <nav className="navbar navbar-expand-lg">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" href="/">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/places">Places</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/places/create">Add Place</a>
+            </li>
+          </ul>
+        </nav>
         <div className="content container text-center">
           {html.children}
         </div>

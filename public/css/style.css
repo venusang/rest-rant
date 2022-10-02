@@ -3,15 +3,6 @@ h1 {
   color: cornflowerblue;
 }
 
-/* .content {
-  min-height: calc(100vh - 70px);
-}
-
-.footer {
-  height: 50px;
-  background: purple;
-} */
-
 html,
 body {
   height: 100%;
@@ -22,6 +13,34 @@ body {
   flex-direction: column;
 }
 
+/* Nav bar styling */
+nav {
+  background-color: cornflowerblue;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 25px;
+}
+
+/* Replacing nav rules from homework activity instructions with .nav-link  because I'm using bootstrap css for the nav */
+.nav-link {
+  color: white;
+  font-size: 1.5em;
+}
+
+.nav-link:hover {
+  color: pink;
+  text-decoration: none;
+}
+
+/* Sticky footer styling */
 .content {
   flex: 1 0 auto;
 }
