@@ -9,6 +9,7 @@ function Def(html) {
         <link rel="stylesheet" href="/css/style.css" />
       </head>
       <body>
+        <nav></nav>
         <div className="content container text-center">
           {html.children}
         </div>
