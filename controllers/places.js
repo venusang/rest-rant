@@ -3,14 +3,25 @@ const router = require('express').Router();
 const places = require('../models/places.js');
 const states = require('../models/states.js');
 
+// Create get - this shows the create page
 router.get('/create', (req, res) => {
   res.render('places/create', { states });
 });
 
+// Detail get- also called Show page 
+// this shows the details of a particular place based it's id
 router.get('/:id', (req, res) => {
-  res.render('places/detail', { id: req.params.id });
+  let id = Number(req.params.id);
+  if (isNaN(id)) {
+    res.render('error404');
+  } else if (!places[id]) {
+    res.render('error404');
+  } else {
+    res.render('places/detail', { place: places[id] });
+  }
 });
 
+// Create post - this creates the new place on submit
 router.post('/', (req, res) => {
   console.log('req.body', req.body);
   if (!req.body.pic) {
