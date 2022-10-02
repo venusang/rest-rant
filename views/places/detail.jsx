@@ -12,7 +12,13 @@ function detail(data) {
             </div>
             <div className="col-md-8">
               <div className="card-body">
-                <h5 className="card-title">{data.place.name}</h5>
+                <h5 className="card-title">
+                  {data.place.name}
+                  <a href="" className="ms-1 px-2 btn btn-warning">
+                    Edit
+                  </a>
+                </h5>
+
                 {/* Rating */}
                 <h6 className="card-subtitle">Rating</h6>
                 <p className="card-text text-secondary">Not rated</p>
@@ -20,6 +26,13 @@ function detail(data) {
                 {/* Description */}
                 <h6 className="card-subtitle">Description</h6>
                 <p className="card-text text-secondary">Located in {data.place.city}, {data.place.state} and serving {data.place.cuisines}</p>
+
+                {/* Delete button */}
+                <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
+                  <button type="submit" className="btn btn-danger">
+                    Delete
+                  </button>
+                </form>
 
               </div>
             </div>

@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
   } else if (!places[id]) {
     res.render('error404');
   } else {
-    res.render('places/detail', { place: places[id] });
+    res.render('places/detail', { place: places[id], id });
   }
 });
 
